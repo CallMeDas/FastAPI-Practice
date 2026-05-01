@@ -1,5 +1,4 @@
-
-from pydantic import BaseModel
+from pydantic import BaseModel, Field
 
 
 class Product(BaseModel):
@@ -8,6 +7,3 @@ class Product(BaseModel):
     description: str
     price: float
     quantity: int
-
-
-
