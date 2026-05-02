@@ -1,4 +1,18 @@
 from database.schemas import Product
+from sqlalchemy import create_engine
+from sqlalchemy.orm import sessionmaker
+from dotenv import load_dotenv
+import os
+
+load_dotenv()
+
+DB_USERNAME = os.getenv("DB_USERNAME")
+DB_PASSWORD = os.getenv("DB_PASSWORD")
+DB_NAME = os.getenv("DB_NAME")
+
+db_url = f"postgresql://{DB_USERNAME}:{DB_PASSWORD}@localhost:5432/{DB_NAME}"
+engine = create_engine(db_url)
+SessionLocal = sessionmaker(autoflush=False, autocommit= False, bind=engine)
 
 products = [
     Product(id=1, name="Watch", description="Good to wear", price=890, quantity=30),
