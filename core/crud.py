@@ -3,6 +3,7 @@ from database.database import products
 from database.schemas import Product
 
 
+
 def get_all_products():
     return products
 
