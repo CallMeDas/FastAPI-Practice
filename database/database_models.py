@@ -48,7 +48,6 @@ def init_db():
         db.add(Product(**product.model_dump()))
 
     db.commit()
-    db.close()
 
 
 init_db()
