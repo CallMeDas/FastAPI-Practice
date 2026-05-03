@@ -1,7 +1,7 @@
 from fastapi import FastAPI
 from routes.product import router as product_router
 from database import database_models
-from database.database import engine
+from database.database_models import engine
 
 app = FastAPI()
 
